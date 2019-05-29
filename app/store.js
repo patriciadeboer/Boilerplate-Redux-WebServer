@@ -1,13 +1,10 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
-
-function rootReducer(state = {}, action) {
-  return state;
-}
+import appReducer from './redux'
 
 const store = createStore(
-  rootReducer,
+  appReducer,
   applyMiddleware(
     thunkMiddleware,
     createLogger()
